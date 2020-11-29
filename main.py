@@ -1,16 +1,35 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from art import logo
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def add(n1, n2):
+    return n1+n2
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def subtract(n1,n2):
+    return n1-n2
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+def multiply(n1, n2):
+    return n1*n2
+
+
+def divide(n1, n2):
+    return n1/n2
+
+
+operations = {
+  "+": add,
+  "-": subtract,
+  "*": multiply,
+  "/": divide,
+}
+print(logo)
+num1 = int(input("What is the first number: "))
+num2= int(input("what is the second number: "))
+
+for key in operations:
+    print(key)
+
+key = input("Pick an operation from the line above: ")
+result = operations[key]
+print(result(num1, num2))
